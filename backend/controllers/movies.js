@@ -11,7 +11,6 @@ exports.addMovie = asyncHandler(async (req, res, next) => {
   };
   const newMovieId = await knex('movies').insert(newMovieData);
   const movie = await knex.select().from('movies').where('id', newMovieId);
-  console.log(movie);
   res.json({ success: true, movie });
 });
 
