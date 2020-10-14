@@ -7,7 +7,9 @@
 2. In /backend/ run `npm i `
 3. Remove \_ in `/backend/config/_config.env` file
    1. Fill out the variables with your data.
-4. Set up knex.js.
+4. Set up knex.js
+
+   - (if is not globaly installed, install it. `npm i -g knex`).
 
    1. Run the migrations from the /backend folder:
       - `knex migrate:latest`
