@@ -1,4 +1,5 @@
 const knex = require('../db/connection');
+const ErrorResponse = require('../utils/errorResponse');
 const { asyncHandler } = require('../utils/async');
 
 exports.addMovie = asyncHandler(async (req, res, next) => {
@@ -9,6 +10,15 @@ exports.addMovie = asyncHandler(async (req, res, next) => {
     plot: req.body.plot.trim(),
     explicit: req.body.explicit,
   };
+
+  if (newMovieData.name === '') {
+    return next(new ErrorResponse('Name of the movie is required.', 400));
+  }
+
+  if (newMovieData.rating > 10 || newMovieData.rating < 1) {
+    return next(new ErrorResponse('Rating must be from 1 to 10.', 400));
+  }
+
   const newMovieId = await knex('movies').insert(newMovieData);
   const movie = await knex.select().from('movies').where('id', newMovieId);
   res.json({ success: true, movie });
@@ -22,6 +32,14 @@ exports.updateMovie = asyncHandler(async (req, res, next) => {
     plot: req.body.plot.trim(),
     explicit: req.body.explicit,
   };
+
+  if (newMovieData.name === '') {
+    return next(new ErrorResponse('Name of the movie is required.', 400));
+  }
+
+  if (updateMovieData.rating > 10 || updateMovieData.rating < 1) {
+    return next(new ErrorResponse('Rating must be from 1 to 10.', 400));
+  }
   const newMovieId = await knex('movies')
     .where('id', req.params.id)
     .update(updateMovieData);

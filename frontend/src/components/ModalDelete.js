@@ -46,7 +46,7 @@ const ModalDelete = forwardRef(({ movieId }, ref) => {
         <Modal.Body>Are you sure?</Modal.Body>
         <Modal.Footer>
           <button className="btn btn-primary btn-sm" onClick={handleClose}>
-            Close
+            Cancel
           </button>
           <button className="btn btn-danger btn-sm" onClick={deleteMovie}>
             Delete
