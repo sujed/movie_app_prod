@@ -20,14 +20,14 @@ app.use(xss());
 
 // Dev logging middleware
 if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
 }
-app.use(morgan('dev'));
 
 // Rate limiting - 100req/10m
 const limiter = rateLimit({
   windowMs: 3 * 60 * 1000,
   max: 100,
-  message: 'Too many requests, please try againg in 10 minutes.',
+  message: 'Too many requests, please try again in 3 minutes.',
 });
 
 app.use(express.json());
