@@ -1,0 +1,17 @@
+.btn {
+  border-radius: 5px;
+}
+
+.card {
+  border-radius: 5px;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.alert {
+  text-align: center;
+  text-transform: uppercase;
+}
