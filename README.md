@@ -3,11 +3,11 @@
 ##### How to run?
 
 1. Make sure you have mysql installed.
-   2.Create mysql database.
-2. In `/backend/` run `npm i `
-3. Remove `_` in `/backend/config/_config.env` file
+2. Create mysql database.
+3. In `/backend/` run `npm i `
+4. Remove `_` in `/backend/config/_config.env` file
    1. Fill out the variables with your data.
-4. Set up knex.js
+5. Set up knex.js
 
    - (if knex is not globaly installed, install it. `npm i -g knex`).
 
@@ -15,8 +15,8 @@
       - `knex migrate:latest`
       - `knex seed:run`
 
-5. In `/backend/` run `npm start`.
-6. Open your browser on http://localhost:4000
+6. In `/backend/` run `npm start`.
+7. Open your browser on http://localhost:4000
 
 ---
 
