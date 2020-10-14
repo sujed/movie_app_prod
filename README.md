@@ -9,7 +9,7 @@
    1. Fill out the variables with your data.
 4. Set up knex.js
 
-   - (if is not globaly installed, install it. `npm i -g knex`).
+   - (if knex is not globaly installed, install it. `npm i -g knex`).
 
    1. Run the migrations from the /backend folder:
       - `knex migrate:latest`
